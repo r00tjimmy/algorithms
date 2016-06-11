@@ -89,7 +89,7 @@ func (A *Matrix) trace() float64 {
 }
 
 func (A *Matrix) add(B *Matrix) error {
-	if A.cols != B.cols && A.rows != B.rows {
+	if A.cols != B.cols || A.rows != B.rows {
 		return errors.New("Wrong input sizes")
 	}
 	for i := 0; i < A.rows; i++ {
@@ -102,7 +102,7 @@ func (A *Matrix) add(B *Matrix) error {
 }
 
 func (A *Matrix) substract(B *Matrix) error {
-	if A.cols != B.cols && A.rows != B.rows {
+	if A.cols != B.cols || A.rows != B.rows {
 		return errors.New("Wrong input sizes")
 	}
 	for i := 0; i < A.rows; i++ {
